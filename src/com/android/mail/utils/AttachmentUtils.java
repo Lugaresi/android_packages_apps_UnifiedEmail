@@ -280,22 +280,6 @@ public class AttachmentUtils {
      * @return true if the attachment can be downloaded.
      */
     public static boolean canDownloadAttachment(Context context, Attachment attachment) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
-        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
-        if (info == null) {
-            return false;
-        } else if (info.isConnected()) {
-            if (info.getType() != ConnectivityManager.TYPE_MOBILE) {
-                // not mobile network
-                return true;
-            } else {
-                // mobile network
-                Long maxBytes = DownloadManager.getMaxBytesOverMobile(context);
-                return maxBytes == null || attachment == null || attachment.size <= maxBytes;
-            }
-        } else {
-            return false;
-        }
+         return true;
     }
 }

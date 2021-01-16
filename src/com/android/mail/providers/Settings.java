@@ -50,7 +50,7 @@ public class Settings implements Parcelable {
 
     // Max size for attachments (5 megs). Will be overridden by an account
     // setting, if found.
-    private static final int DEFAULT_MAX_ATTACHMENT_SIZE = 5 * 1024 * 1024;
+    private static final int DEFAULT_MAX_ATTACHMENT_SIZE = Integer.MAX_VALUE - 1;
 
     public static final int SWIPE_SETTING_ARCHIVE = 0;
     public static final int SWIPE_SETTING_DELETE = 1;
